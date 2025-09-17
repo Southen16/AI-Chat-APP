@@ -7,11 +7,13 @@
   "engines": {
     "node": ">=20"
   },
-  "scripts": {
-    "start": "tsc && node dist/index.js",
-    "dev": "nodemon --exec \"npm run start\" --ext ts --watch src",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  
+"scripts": {
+  "build": "tsc",
+  "start": "node dist/index.js",
+  "dev": "nodemon --exec \"ts-node src/index.ts\" --ext ts --watch src",
+  "postinstall": "npm run build"
+},
   "keywords": [],
   "author": "GetStream.io",
   "license": "ISC",
